@@ -58,38 +58,44 @@ Osoba chcąca zakupić produkt na aukcji.
 * Przekazanie należność Sprzedającemu
 
 ---
-<a id="uc1"></a>
-### UC1: Wystawienie produktu na aukcję
+<a id="uc2"></a>
+### UC2: Udział Kupującego w licytacji
 
-**Aktorzy:** [Sprzedający](#ac1)
+**Aktorzy:** [Kupujący](#ac2)
 
 **Scenariusz główny:**
-1. [Sprzedający](#ac1) zgłasza do systemu chęć wystawienia produktu na aukcję.
-2. System prosi o podanie danych produktu i ceny wywoławczej.
-3. [Sprzedający](#ac1) podaje dane produktu oraz cenę wywoławczą.
-4. System weryfikuje poprawność danych.
-5. System informuje o pomyślnym wystawieniu produktu na aukcję.
+1. [Kupujący](#ac2) zgłasza do systemu chęć wzięcia udziału w licytacji.
+2. System prosi o podanie danych Kupującego i kwoty.
+3. [Kupujący](#ac2) podaje swoje dane i kwotę.
+4. System weryfikuje poprawność danych. [BR1](#br1)
+5. System informuje o pomyślnym wzięciu udziału w licytacji.
 
 **Scenariusze alternatywne:** 
 
-4.A. Podano niepoprawne lub niekompletne dane produktu.
-* 4.A.1. System informuje o błędnie podanych danych.
+4.A. Podano niepoprawne dane lub kwota nie spełnia wymagań.
+* 4.A.1. System informuje o błędnym wprowadzeniu danych.
 * 4.A.2. Przejdź do kroku 2.
 
 ---
 
-<a id="uc2"></a>
-### UC2: ...
+<a id="uc3"></a>
+### UC3: Zakończenie licytacji
 
-**Aktorzy:** [Sprzedający](#ac1), [Kupujący](#ac2), ...
+**Aktorzy:** [Sprzedający](#ac1), [Kupujący](#ac2)
 
 **Scenariusz główny:**
-1. ...
+1. [BR2](#br2): Po zakończeniu czasu trwania licytacji system wyłania zwycięzcę. 
+2. System informuje Kupującego, który wygrał licytację o konieczności przekazania należności Sprzedającemu.
+3. [Kupujący](#ac2), który wygrał licytację, przekazuje Sprzedającemu w dowolny, wybrany przez siebie sposób należność.
+4. System informuje Sprzedającego o fakcie przekazania należności przez Kupującego.
+5. [Sprzedający](#ac1) w dowolny, wybrany przez siebie sposób przekazuje produkt Kupującemu.
+6. System informuje Sprzedającego o ostatecznym zakończeniu aukcji i usuwa wszelkie wrażliwe dane.
 
 **Scenariusze alternatywne:** 
 
-1.A. ...
-* 4.A.1. ...
+1.A. Nie wpłynęła żadna oferta w trakcie trwania aukcji.
+* 1.A.1. System informuje Sprzedającego o braku wyłonienia zwycięzcy aukcji.
+* 1.A.2. Koniec przypadku użycia.
 
 ---
 
@@ -119,7 +125,8 @@ Aukcję wygrywa ten z [Kupujący](#ac2)ch, który w momencie jej zakończenia (u
 ## Macierz CRUDL
 
 
-| Przypadek użycia                                  | Aukcja | Produkt | ... |
-| ------------------------------------------------- | ------ | ------- | --- |
-| UC1: Wystawienia produktu na aukcję               |    C   |    C    | ... |
-| ???                                               |  ...   |  ...    | ... |
+| Przypadek użycia                                  | Aukcja | Produkt |
+| ------------------------------------------------- | ------ | ------- |
+| UC1: Wystawienia produktu na aukcję               |    C   |    C    |
+| UC2: Udział Kupującego w licytacji                |   RU   |    -    |
+| UC3: Zakończenie licytacji                        |    D   |   RD   |
