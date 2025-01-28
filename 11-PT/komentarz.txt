@@ -1,0 +1,15 @@
+Zadanie 1.Kod Bazowy:
+Średnia: 8354
+Przepustowość: 43.6/min
+
+(Usprawnienia polegały na cache'owaniu danych przed obliczeniami oraz eliminacji obliczania średniej dla wszystkich klientów w każdej iteracji pętli)
+
+Zmodyfikowany Kod:
+Średnia: 242
+Przepustowość: 6.7/s
+
+Zadanie 2.Kod Bazowy:
+Przepustowość: 1.9/s 
+
+Rekomendowana liczba drukarek: 30
+Przepustowość: 5.9/s
